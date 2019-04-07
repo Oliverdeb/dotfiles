@@ -11,6 +11,7 @@
 - nm-applet (NetworkManager) to do WiFi things
 - pavucontrol for changing audio sources / volume control
 - Firefox + tree style tabs + tab session manager + dark theme
+  - Set tree style groups by `vmoz-extension://8039e888-7f16-4196-a2e8-abafb3ba4750/resources/group-tab.html?title=%s&temporary=false`
 - feh to set/change background image
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
 
