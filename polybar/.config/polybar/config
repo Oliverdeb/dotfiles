@@ -1,0 +1,208 @@
+[bar/top]
+monitor=${env:MONITOR:}
+width = 100%
+height = 34
+
+#background = #00000000
+foreground = #ccffffff
+
+line-color = #00000000
+
+; override-redirect = true
+tray-position = left
+tray-offset-y = -3
+
+
+padding-right = 4
+padding-left = 4
+module-margin= 2
+
+font-0 = Unifont:style=Medium:size=10;
+font-1 = Noto Sans:style=Regular:size=10;
+font-2 = Hack Nerd Font:style=Regular:size=10;
+font-3 = Material Design Icons:style=Regular:size=10;
+font-4 = FontAwesome:style=Regular:size=10;
+
+modules-left = powermenu i3 spotify
+modules-center = date wired-network
+modules-right = cpu memory volume
+
+
+[module/i3]
+type = internal/i3
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-4 = 10; 
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${BAR.background}
+
+index-sort = true
+wrapping-scroll = false
+
+workspace-label = %index%: %icon%
+
+label-focused = ${self.workspace-label}
+label-focused-padding = 1
+
+label-unfocused = ${self.workspace-label}
+label-unfocused-padding = 1
+label-unfocused-foreground = #555555
+
+label-urgent = ${self.workspace-label}
+label-urgent-padding = 1
+
+label-visible = ${self.workspace-label}
+label-visible-padding = 1
+label-visible-foregroud = #888888
+
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+
+[module/date]
+type = internal/date
+date = %{T3}%%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}%%{T-}
+date-alt = %{T3}%%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}%%{T-}
+
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 10
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+
+[module/spotify]
+type = custom/script
+; all of this could of course be put in a single script... or just move the piping to the spotify script
+exec =  ~/.config/i3/spoty.sh %artist% - %title% | while read -r status; do echo $status; done
+; tail since scroller will output continuously
+tail = true
+; when the script has ended, wait this time and then launch it again
+interval = 1
+
+
+[module/wired-network]
+type = internal/network
+interface = enp0s31f6 
+interval = 3.0
+
+label-connected = %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = #444444
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #444444
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+
+label-open = 
+label-close = 
+
+label-separator = |
+label-separator-foreground = #00000000
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log out
+menu-0-2-exec = menu-open-3
+menu-0-3 = sleep
+menu-0-3-exec = i3lock && systemctl suspend
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0 
+
+menu-3-0 = log out
+menu-3-0-exec = i3-msg exit
+menu-3-1 = lock
+menu-3-1-exec = i3lock
+menu-3-2 = cancel
+menu-3-2-exec = menu-open-0
+
+
+; vim:ft=dosini
