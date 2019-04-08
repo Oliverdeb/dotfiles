@@ -15,7 +15,7 @@
 - feh to set/change background image
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
 
-## Fonts / Icons installed
+## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
 2. Material Design Icons
 3. Font Awesome
