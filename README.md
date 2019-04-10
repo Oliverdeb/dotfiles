@@ -10,10 +10,14 @@
 ## Useful apps:
 - nm-applet (NetworkManager) to do WiFi things
 - pavucontrol for changing audio sources / volume control
+- blueman for bluetooth applet on polybar
 - Firefox + tree style tabs + tab session manager + dark theme
   - Set tree style groups by `vmoz-extension://8039e888-7f16-4196-a2e8-abafb3ba4750/resources/group-tab.html?title=%s&temporary=false`
+  - [gnome style dark style for firefix](https://github.com/kurogetsusai/firefox-gnome-theme)
 - feh to set/change background image
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
+- i3lock / [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) for lock screen
+
 
 ## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
