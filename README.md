@@ -19,6 +19,8 @@
 - i3lock / [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) /i3lock-multimonitor for lock screen
 - dunst for notifications
 - indicator-sound-switcher for switching audio input/output
+- [light](https://github.com/haikarainen/light) for brightness control
+  - with [this](https://www.reddit.com/r/SolusProject/comments/7wu6sw/light_the_xbacklight_alternative_only_works_with/du4bz32/?utm_source=share&utm_medium=web2x) hack
 
 ## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
