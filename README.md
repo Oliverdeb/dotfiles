@@ -18,7 +18,7 @@
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
 - i3lock / [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) /i3lock-multimonitor for lock screen
 - dunst for notifications
-
+- indicator-sound-switcher for switching audio input/output
 
 ## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
