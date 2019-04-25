@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+focus_follows_mouse no
+
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -30,7 +33,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -151,6 +154,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Wall papers
 exec --no-startup-id feh --bg-fill `cd ~/Pictures/wpapers/ && ls -d -1 $PWD/* | sort -R | tail -1`
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -172,7 +176,7 @@ new_window 1pixel
 exec --no-startup-id redshift-gtk -l -33.8:18.42
 
 # Set screen config!
-exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 2560x1080 --pos 1920x0 --rotate normal --output DVI-1 --off --output DVI-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal
+exec --no-startup-id ~/.screenlayout/norm.sh &
 
 # Gaps stuff
 gaps inner 15
@@ -187,12 +191,12 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym --release Mod4+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # font stuff
-exec --no-startup-id xset +fp /home/oliver/.fonts
-exec --no-startup-id xset fp rehash
+# exec --no-startup-id xset +fp /home/oliver/.fonts
+# exec --no-startup-id xset fp rehash
 
 # Lock screen
-bindsym Control+$mod+l exec i3lock -u
-
+# bindsym Control+$mod+l exec i3lock -t -i ~/Pictures/bsod.png
+bindsym Control+$mod+l exec /opt/i3lock-multimonitor/lock
 # Sleep
 bindsym Control+$mod+s exec i3lock && systemctl suspend
 
@@ -203,3 +207,22 @@ for_window [class="Yad"] floating enable
 
 # Play/Pause control for spotify
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+# applets & other
+#exec --no-startup-id indicator-sound-switcher
+exec --no-startup-id gnome-session
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet 
+
+exec --no-startup-id termite --name dropdown
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] move scratchpad
+bindsym $mod+grave [instance="dropdown"] scratchpad show; move position center
+
+# media
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec light -U 15
+bindsym XF86MonBrightnessUp exec light -A 15

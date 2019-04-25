@@ -4,9 +4,17 @@ export FZF_CTRL_T_COMMAND='find . 2>/dev/null'
 export FZF_DEFAULT_OPTS='--layout=reverse'
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=1000000
+HISTSIZE=20000
+SAVEHIST=15000
 setopt appendhistory autocd extendedglob nomatch notify
+
+######################### history options ############################
+setopt EXTENDED_HISTORY        # store time in history
+setopt HIST_EXPIRE_DUPS_FIRST  # unique events are more usefull to me
+setopt HIST_VERIFY             # Make those history commands nice
+setopt INC_APPEND_HISTORY      # immediatly insert history into history file
+setopt histignoredups          # ignore duplicates of the previous event
+
 # Path to your oh-my-zsh installation.
   export ZSH="/home/oliver/.oh-my-zsh"
 

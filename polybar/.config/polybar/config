@@ -25,7 +25,7 @@ font-4 = FontAwesome:style=Regular:size=10;
 
 modules-left = powermenu i3 spotify
 modules-center = date wired-network
-modules-right = cpu memory volume
+modules-right = battery_custom cpu memory volume
 
 
 [module/i3]
@@ -128,10 +128,14 @@ tail = true
 ; when the script has ended, wait this time and then launch it again
 interval = 1
 
+[module/battery_custom]
+type = custom/script
+exec = ~/.config/i3/battery.sh
+interval = 1 
 
 [module/wired-network]
 type = internal/network
-interface = enp0s31f6 
+interface = wlp2s0 
 interval = 3.0
 
 label-connected = %{T3}%local_ip%%{T-}
