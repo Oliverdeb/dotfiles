@@ -16,13 +16,17 @@
   - [gnome style dark style for firefix](https://github.com/kurogetsusai/firefox-gnome-theme)
 - feh to set/change background image
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
-- i3lock / [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) for lock screen
+- i3lock / [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) /i3lock-multimonitor for lock screen
+- dunst for notifications
 
 
 ## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
 2. Material Design Icons
 3. Font Awesome
+
+## Theming
+- Adawaita dark, followed [this post](https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm) 
 
 ## Heavily inspired by 
  - [This reddit post: [i3-gaps] Trying the new Ubuntu 18.04](https://www.reddit.com/r/unixporn/comments/8gqmtj/i3gaps_trying_the_new_ubuntu_1804/)
