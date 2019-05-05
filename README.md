@@ -21,6 +21,8 @@
 - indicator-sound-switcher for switching audio input/output
 - [light](https://github.com/haikarainen/light) for brightness control
   - with [this](https://www.reddit.com/r/SolusProject/comments/7wu6sw/light_the_xbacklight_alternative_only_works_with/du4bz32/?utm_source=share&utm_medium=web2x) hack
+  
+#### Very useful script for installing i3-gaps and other useful apps: https://github.com/klaxalk/linux-setup/blob/master/appconfig/i3/install.sh
 
 ## Fonts / Icons installed (see fonts folder)
 1. Hack Nerd Font
