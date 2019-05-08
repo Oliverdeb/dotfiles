@@ -10,7 +10,7 @@ line-color = #00000000
 
 ; override-redirect = true
 tray-position = left
-tray-offset-y = -3
+;tray-offset-y = 0
 
 
 padding-right = 4
@@ -24,9 +24,10 @@ font-3 = Material Design Icons:style=Regular:size=10;
 font-4 = FontAwesome:style=Regular:size=10;
 
 modules-left = powermenu i3 spotify
-modules-center = date wired-network
-modules-right = battery_custom cpu memory volume
-
+modules-center = date wired-network wireless-network
+; modules-center = date wired-network wireless-network
+modules-right = temperature cpu memory volume
+;modules-right = temperature cpu memory pulseaudio
 
 [module/i3]
 type = internal/i3
@@ -92,17 +93,41 @@ ramp-coreload-7 = █
 ramp-coreload-7-font = 2
 ramp-coreload-7-foreground = #ff5555
 
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
+label = CPU: %temperature-c%
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
 
 [module/date]
 type = internal/date
-date = %{T3}%%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}%%{T-}
-date-alt = %{T3}%%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}%%{T-}
+;date = %{T3}%%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}%%{T-}
+date = %{T3}%%{F#fff}%A, %d %B %Y  |  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}%%{T-}  |
 
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = RAM
+format = <label> 
+;format = <label> <bar-used>
+label = RAM %gb_used%/%gb_free%
 
 bar-used-width = 10
 bar-used-foreground-0 = #aaff77
@@ -133,14 +158,31 @@ type = custom/script
 exec = ~/.config/i3/battery.sh
 interval = 1 
 
+;[module/wired-network]
+;type = internal/network
+;interface = enp0s31f6 
+;interval = 3.0
+
+;label-disconnected-foreground = #66
+
 [module/wired-network]
 type = internal/network
-interface = wlp2s0 
-interval = 3.0
+interface = enp0s31f6
+interval = 1.0
+format-connected = <label-connected>
 
-label-connected = %{T3}%local_ip%%{T-}
-label-disconnected-foreground = #66
+label-connected = %{T3}%local_ip% %downspeed% %upspeed%%{T-}
+#label-connected = %local_ip% %downspeed% %upspeed%
+#label-connected-foreground = #eefafafa
 
+accumulate-stats = true
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+
+#[module/pulseaudio]
+#type = internal/pulseaudio
 
 [module/volume]
 type = internal/alsa
