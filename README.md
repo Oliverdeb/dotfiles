@@ -13,6 +13,7 @@
 - blueman for bluetooth applet on polybar
 - Firefox + tree style tabs + tab session manager + dark theme
   - Set tree style groups by `vmoz-extension://8039e888-7f16-4196-a2e8-abafb3ba4750/resources/group-tab.html?title=%s&temporary=false`
+  - arc dark firefox theme (addon)
   - [gnome style dark style for firefix](https://github.com/kurogetsusai/firefox-gnome-theme)
 - feh to set/change background image
 - [redshift-gtk](https://github.com/jonls/redshift) to do redshift things for the eyes
