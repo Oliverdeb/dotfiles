@@ -31,6 +31,8 @@
 
 ## Theming
 - Adawaita dark, followed [this post](https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm) 
+- `sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig`
+- Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qtconfig-qt4, there is a dropdown menu setting to make qt take the GTK+ settings. 
 
 ## Heavily inspired by 
  - [This reddit post: [i3-gaps] Trying the new Ubuntu 18.04](https://www.reddit.com/r/unixporn/comments/8gqmtj/i3gaps_trying_the_new_ubuntu_1804/)
