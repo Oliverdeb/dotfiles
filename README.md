@@ -29,6 +29,7 @@
 1. Hack Nerd Font
 2. Material Design Icons
 3. Font Awesome
+4 [Font for rofi](https://github.com/supermarin/YosemiteSanFranciscoFont)
 
 ## Theming
 - Adawaita dark, followed [this post](https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm) 
