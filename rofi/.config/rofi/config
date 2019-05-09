@@ -1,1 +1,11 @@
-rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi
+rofi.combi-modi: window,drun,ssh
+rofi.modi: combi,run
+rofi.width: 100
+rofi.lines: 6
+rofi.padding: 800
+rofi.eh: 1 
+rofi.opacity 85
+rofi.bw: 0
+rofi.color-normal: #2f343f, #f3f4f5, #2f343f, #2f343f, #9575cd
+rofi.color-window: #2f343f, #2f343f, #2f343f
+rofi.font: SFNS Display 20

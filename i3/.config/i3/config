@@ -170,7 +170,7 @@ exec --no-startup-id feh --bg-fill `cd ~/Pictures/wpapers/ && ls -d -1 $PWD/* | 
 exec_always --no-startup-id ~/.config/i3/bar.sh &
 exec_always --no-startup-id ~/.config/i3/poly_select_display.sh &
 # Start compton for shadows and nice stuff
-exec_always --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
+exec_always --no-startup-id "compton -D 5 -f -b --config ~/.config/compton/compton.conf"
 
 # Set window border to 1 pixel
 new_window 1pixel
