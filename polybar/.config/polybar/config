@@ -26,8 +26,8 @@ font-4 = FontAwesome:style=Regular:size=10;
 modules-left = powermenu i3 spotify
 modules-center = date wired-network wireless-network
 ; modules-center = date wired-network wireless-network
-modules-right = temperature cpu memory volume
-;modules-right = temperature cpu memory pulseaudio
+#modules-right = temperature cpu memory volume
+modules-right = temperature cpu memory pulseaudio
 
 [module/i3]
 type = internal/i3
@@ -181,11 +181,11 @@ accumulate-stats = true
 type = internal/network
 interface = wlp2s0
 
-#[module/pulseaudio]
-#type = internal/pulseaudio
+[module/pulseaudio]
+type = internal/pulseaudio
 
-[module/volume]
-type = internal/alsa
+#[module/volume]
+#type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL

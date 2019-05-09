@@ -117,8 +117,8 @@ if &term =~ '256color'
 endif
 
 " colooooooorz
-"colorscheme onedark
-"let g:airline_theme='onedark'
+colorscheme onedark
+let g:airline_theme='onedark'
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -175,7 +175,7 @@ command! FormatJSON %!python -m json.tool
 set hidden        " buffer file instead of closing them
 
 " set relativenumber " show relative line numbers
-set nu
+set nu              " enable normal line numbers
 
 set expandtab    " On pressing tab, insert 4 spaces
 set nowrap        " don't wrap lines

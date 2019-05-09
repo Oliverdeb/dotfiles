@@ -17,7 +17,7 @@ cursor_blink = on
 # special
 foreground      = #abb2bf
 foreground_bold = #abb2bf
-# cursor          =
+cursor          =
 background      = #282c34
 
 # black
