@@ -5,7 +5,7 @@
 5. [Termite](https://github.com/thestinger/termite) as the terminal emulator (replace gnome-terminal)
 6. Zsh + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) + [fzf (fuzzy finder)](https://github.com/junegunn/fzf)  as shell
 8. [**Rofi**](https://github.com/DaveDavenport/rofi) (awesome) as the window switcher / launcher (replaces dmenu on vanilla i3)
-
+9. Tmux config from [here](https://github.com/gpakosz/.tmux)
 
 ## Useful apps:
 - nm-applet (NetworkManager) to do WiFi things
@@ -36,3 +36,4 @@
  - [This reddit post: [i3-gaps] Trying the new Ubuntu 18.04](https://www.reddit.com/r/unixporn/comments/8gqmtj/i3gaps_trying_the_new_ubuntu_1804/)
  - [Initial post, KDE+debian based though](https://www.reddit.com/r/unixporn/comments/64mihc/i3_kde_plasma_a_match_made_in_heaven/)
  
+https://github.com/gpakosz/.tmux
