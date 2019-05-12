@@ -169,8 +169,10 @@ exec --no-startup-id feh --bg-fill `cd ~/Pictures/wpapers/ && ls -d -1 $PWD/* | 
 #}
 exec_always --no-startup-id ~/.config/i3/bar.sh &
 exec_always --no-startup-id ~/.config/i3/poly_select_display.sh &
-# Start compton for shadows and nice stuff
-exec_always --no-startup-id "compton -D 5 -f -b --config ~/.config/compton/compton.conf"
+
+# Start compton for shadows, fade and opacity control
+# can not start compton with -b flag (daemonize) because of AMD driver issue: 
+exec_always --no-startup-id killall compton; compton --config ~/.config/compton/compton.conf & disown
 
 # Set window border to 1 pixel
 new_window 1pixel
