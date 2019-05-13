@@ -30,9 +30,11 @@
 2. Material Design Icons
 3. Font Awesome
 4 [Font for rofi](https://github.com/supermarin/YosemiteSanFranciscoFont)
+5. Icons for Thunar/Nautilus [arc-theme-icons](https://github.com/horst3180/arc-icon-theme)
 
 ## Theming
-- Adawaita dark, followed [this post](https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm) 
+- Adawaita dark, followed [this post](https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm)
+- Arc dark, sudo apt install -y arc-theme
 - `sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig`
 - Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qtconfig-qt4, there is a dropdown menu setting to make qt take the GTK+ settings. 
 
