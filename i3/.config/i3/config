@@ -214,7 +214,7 @@ for_window [class="Yad"] floating enable
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 # applets & other
-#exec --no-startup-id indicator-sound-switcher
+exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id gnome-session
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet 
