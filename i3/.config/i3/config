@@ -217,17 +217,27 @@ bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id gnome-session
 exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet 
+exec --no-startup-id nm-applet
+exec --no-startup-id numlockx on
 
-exec --no-startup-id termite --name dropdown
+# 'drop down' terminal
+exec --no-startup-id termite --name dropdown -e 'tmux -u new-session -A -s devdsk'
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] resize set 1800 900
 bindsym $mod+grave [instance="dropdown"] scratchpad show; move position center
+
+## COPYQ clipboard history! + floating
+exec --no-startup-id copyq # https://github.com/hluk/CopyQ
+for_window [instance="copyq"] floating enable
+for_window [instance="copyq"] resize set 1400 600 
+bindsym $mod+c exec copyq show
+
 
 # media
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec light -U 15
+bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 15
