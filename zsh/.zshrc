@@ -110,5 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gitco='git checkout'
+alias gits='git status'
+alias gb='git branch'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
