@@ -1,0 +1,52 @@
+# Alacritty Configuration
+
+# Window settings
+[window]
+dynamic_title = true
+
+[shell]
+program = "/usr/bin/zsh"
+
+# Font settings
+[font]
+normal.family = "Monospace"
+normal.style = "Regular"
+size = 11.0
+
+# Colors
+[colors]
+primary.background = "#282c34"
+primary.foreground = "#abb2bf"
+
+cursor.text = "#282c34"
+cursor.cursor = "#abb2bf"
+
+[colors.normal]
+black = "#282c34"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#e5c07b"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#abb2bf"
+
+[colors.bright]
+black = "#5c6370"
+red = "#be5046"
+green = "#7a9f60"
+yellow = "#d19a66"
+blue = "#3b84c0"
+magenta = "#9a52af"
+cyan = "#3c909b"
+white = "#828997"
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Cursor settings
+[cursor]
+style = "Block"
+
